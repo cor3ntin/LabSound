@@ -2,9 +2,6 @@
 // Copyright (C) 2010, Google Inc. All rights reserved.
 // Copyright (C) 2015+, The LabSound Authors. All rights reserved.
 
-#include <windows.h>
-#include <mmsystem.h>
-
 #include "internal/win/AudioDestinationWin.h"
 #include "internal/FloatConversion.h"
 #include "internal/VectorMath.h"
@@ -61,7 +58,7 @@ void AudioDestinationWin::configure()
     parameters.deviceId = dac.getDefaultOutputDevice();
     parameters.nChannels = 2;
     parameters.firstChannel = 0;
-    unsigned int sampleRate = unsigned int (hardwareSampleRate());
+    unsigned int sampleRate = (unsigned int)(hardwareSampleRate());
 
 	auto deviceInfo = dac.getDeviceInfo(parameters.deviceId);
 	LOG("Using Default Audio Device: %s", deviceInfo.name.c_str());

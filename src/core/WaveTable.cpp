@@ -13,6 +13,7 @@
 #include <algorithm>
 #include <iostream>
 #include <exception>
+#include <cmath>
 
 // The number of bands per octave.  Each octave will have this many entries in the wave tables.
 const unsigned kNumberOfOctaveBands = 3;
