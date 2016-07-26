@@ -323,6 +323,7 @@ void AudioContext::update(ContextGraphLock& g)
                         
                         AudioNodeOutput::disconnectAllInputs(g, output);
                         AudioNodeOutput::disconnectAllParams(g, output);
+                        dereferenceSourceNode(g, i.from);
                     }
                 }
                 else if (i.to)
@@ -336,6 +337,7 @@ void AudioContext::update(ContextGraphLock& g)
                         
                         AudioNodeOutput::disconnectAllInputs(g, output);
                         AudioNodeOutput::disconnectAllParams(g, output);
+                        dereferenceSourceNode(g, i.to);
                     }
                 }
             }
